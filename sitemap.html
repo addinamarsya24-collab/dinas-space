@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sitemap - Yuna's Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+ <style>
+ 
+    /* BASIC THEME SETUP */
+    body {
+      background-color: #fce4ec !important; 
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    .sitemap-container {
+      max-width: 950px;
+      margin: 60px auto;
+      background-color: #001f3f; 
+      padding: 60px 40px;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      animation: fadeInUp 1.2s ease-out forwards;
+      text-align: center;
+    }
+
+    .sitemap-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: #ff1493;
+      margin-bottom: 50px;
+      text-shadow: 3px 3px 10px rgba(255, 20, 147, 0.3);
+    }
+
+    .sitemap-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 35px;
+    }
+
+    .sitemap-item {
+      background-color: #f8bbd0; /* Soft Pink Circle */
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy transition */
+      padding: 25px;
+      box-sizing: border-box;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    /* THE ANIMATED COLOR-CHANGING TEXT */
+    .sitemap-item a {
+      text-decoration: none;
+      font-size: 1.6rem;
+      font-weight: 900; 
+      text-transform: uppercase;
+      text-align: center;
+      display: inline-block;
+      line-height: 1.2;
+      
+      /* Applying 3D Shadow */
+      text-shadow: 2px 2px 0px #fff, 4px 4px 10px rgba(0,0,0,0.2);
+      
+      /* Animations: Floating + Color Cycle */
+      animation: float 3s ease-in-out infinite, colorShift 4s linear infinite;
+    }
+
+    /* Hover Effects */
+    .sitemap-item:hover {
+      transform: scale(1.1) rotate(5deg); /* Bounces up and tilts slightly */
+      background-color: #ffc1e3;
+      box-shadow: 0 20px 35px rgba(255, 20, 147, 0.5);
+    }
+
+    .sitemap-item:hover a {
+      animation: bounce 0.5s infinite alternate, colorShift 1s linear infinite; /* Speeds up on hover */
+      text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+    }
+
+    .sub-pages li {
+      color: #ad1457; 
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 8px;
+      opacity: 0.9;
+    }
+
+    /* KEYFRAMES FOR THE ANIMATIONS */
+    
+    /* 1. Color Cycling Animation */
+    @keyframes colorShift {
+      0% { color: #ff1493; }    /* Hot Pink */
+      33% { color: #ffffff; }   /* Pure White */
+      66% { color: #ff69b4; }   /* Light Hot Pink */
+      100% { color: #ff1493; }  /* Back to Hot Pink */
+    }
+
+    /* 2. Floating Animation */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* 3. Bouncy Pulse for Hover */
+    @keyframes bounce {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Standard Nav/Footer Styling */
+    nav { text-align: center; padding: 20px; }
+    nav a { margin: 0 15px; text-decoration: none; color: #ff1493; font-weight: bold; font-size: 1.1rem; }
+    footer { text-align: center; padding: 30px; color: #ff1493; font-weight: 500; }
+</style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="biodata.html">Biodata</a>
+    <a href="family.html">Family</a>
+    <a href="education.html">Education</a>
+    <a href="interest.html">Interest</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+
+  <div class="sitemap-container">
+    <h1 class="sitemap-title">Website Sitemap</h1>
+    
+    <ul class="sitemap-list">
+      <li class="sitemap-item">
+        <a href="index.html">Home / About</a>
+        <ul class="sub-pages">
+          <li>Introduction & Welcome</li>
+        </ul>
+      </li>
+
+      <li class="sitemap-item">
+        <a href="biodata.html">Biodata</a>
+        <ul class="sub-pages">
+          <li>Profile & Hobbies</li>
+        </ul>
+      </li>
+
+      <li class="sitemap-item">
+        <a href="family.html">Family</a>
+        <ul class="sub-pages">
+          <li>Meet My Family</li>
+        </ul>
+      </li>
+
+      <li class="sitemap-item">
+        <a href="education.html">Education</a>
+        <ul class="sub-pages">
+          <li>Academic Journey</li>
+        </ul>
+      </li>
+
+      <li class="sitemap-item">
+        <a href="interest.html">Interest</a>
+        <ul class="sub-pages">
+          <li>Skills & Projects</li>
+        </ul>
+      </li>
+
+      <li class="sitemap-item">
+        <a href="gallery.html">Gallery</a>
+        <ul class="sub-pages">
+          <li>Memory Collection</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+<footer class="main-footer">
+    <div class="social-links">
+        <a href="https://youtube.com/@addinaazizi?si=H8Hlrz2-Q6ND-RAf" class="social-link" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        
+        <a href="https://www.instagram.com/mochiandmint_?igsh=cjV3a3h4eW93czFq" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        
+        <a href="https://www.tiktok.com/@dailypagesofdhikir?_r=1&_t=ZS-92evIkDCwh6" class="social-link" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+
+    <div class="footer-utility">
+        <p>&copy; 2025 🎧. All Rights Reserved. 
+        | <a href="sitemap.html" class="footer-sitemap-link">Sitemap</a></p>
+    </div>
+    
+    <div class="info-dates">
+        <span><strong>Data Collected:</strong> 2025-12-14</span>
+        <span><strong>Created:</strong> 2025-12-24</span>
+        <span><strong>Last Updated:</strong> <span id="last-modified">2025-12-30</span></span>
+    </div>
+
+    <script src="date.js"></script>
+</footer>
+
+</html>
