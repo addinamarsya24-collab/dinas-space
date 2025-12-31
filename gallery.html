@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery - Yuna</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loading">
+    <div class="sleep">
+        <span>💤</span>
+        <span>💤</span>
+        <span>💤</span>
+    </div>
+    <p><strong>Wait yaa... 🗣️</strong></p>
+</div>
+
+
+<nav>
+  <span class="music-emoji">🎧</span>
+  <div class="nav-links">
+    <a href="index.html">About</a>
+    <a href="biodata.html">Biodata</a>
+    <a href="family.html">Family</a>
+    <a href="education.html">Education</a>
+    <a href="interest.html">Interest</a>
+    <a href="gallery.html">Gallery</a>
+  </div>
+</nav>
+
+<div class="header-gallery" id="myHeader">
+  <h1>snapshot(づ￣ 3￣)づ</h1>
+  <button class="btn-gallery" onclick="one()">1</button>
+  <button class="btn-gallery" onclick="two()">2</button>
+  <button class="btn-gallery" onclick="four()">4</button>
+</div>
+
+<div class="row-gallery"> 
+  <div class="column-gallery">
+    <img src="din 1.jpeg" style="width:90%">
+    <img src="gal2.jpeg" style="width:90%">
+    <img src="dina 8.jpeg" style="width:90%">
+    <img src="gal11.jpeg" style="width:90%">
+  </div>
+  <div class="column-gallery">
+    <img src="gal10.jpeg" style="width:90%">
+    <img src="gal12.jpeg" style="width:90%">
+    <img src="dina 3.jpeg" style="width:90%">
+    <img src="dina darjah 1.jpg" style="width:90%">
+  </div>
+  <div class="column-gallery">
+    <img src="dina 2.jpeg" style="width:90%">
+    <img src="dina 7.jpeg" style="width:90%">
+    <img src="gal5.jpeg" style="width:90%">
+    <img src="gal4.jpeg" style="width:90%">
+  </div>
+  <div class="column-gallery">
+    <img src="gal8.jpeg" style="width:90%">
+    <img src="gal9.jpeg" style="width:90%">
+    <img src="gal13.jpeg" style="width:90%">
+    <img src="gal7.jpeg" style="width:90%">
+  </div>
+  <div class="column-gallery">
+    <img src="gal14.jpeg" style="width:90%">
+    <img src="gal3.jpeg" style="width:90%">
+    <img src="dina 1.jpeg" style="width:90%">
+    <img src="dina 5.jpeg" style="width:90%">
+  </div>
+</div>
+
+<footer class="main-footer">
+    <div class="social-links">
+        <a href="https://youtube.com/@addinaazizi?si=H8Hlrz2-Q6ND-RAf" class="social-link" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/mochiandmint_?igsh=cjV3a3h4eW93czFq" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@dailypagesofdhikir?_r=1&_t=ZS-92evIkDCwh6" class="social-link" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+
+    <div class="footer-utility">
+        <p>&copy; 2025 🎧. All Rights Reserved. 
+        | <a href="sitemap.html" class="footer-sitemap-link">Sitemap</a></p>
+    </div>
+    
+    <div class="info-dates">
+        <span><strong>Data Collected:</strong> 2025-12-14</span>
+        <span><strong>Created:</strong> 2025-12-24</span>
+        <span><strong>Last Updated:</strong> <span id="last-modified">2025-12-30</span></span>
+    </div>
+
+    <script src="date.js"></script>
+</footer>
+
+<script>
+var elements = document.getElementsByClassName("column-gallery");
+var i;
+
+function one() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.flex = "100%";
+  }
+}
+
+function two() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.flex = "50%";
+  }
+}
+
+function four() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.flex = "25%";
+  }
+}
+</script>
+
+</body>
+</html>
