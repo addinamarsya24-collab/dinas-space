@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family - Yuna</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loading">
+    <div class="sleep">
+        <span>💤</span>
+        <span>💤</span>
+        <span>💤</span>
+    </div>
+    <p><strong>Wait yaa... 🗣️</strong></p>
+</div>
+
+<nav>
+  <span class="music-emoji">🎧</span>
+  <div class="nav-links">
+    <a href="index.html">About</a>
+    <a href="biodata.html">Biodata</a>
+    <a href="family.html">Family</a>
+    <a href="education.html">Education</a>
+    <a href="interest.html">Interest</a>
+    <a href="gallery.html">Gallery</a>
+  </div>
+</nav>
+
+<main class="family-layout">
+  <section class="side-panel left-panel">
+    <div class="image-placeholder">
+        <img src="fam 1.jpeg" alt="Family Photo Left">
+    </div>
+    <h2 class="vertical-text">ABAH'S SIDE 💛</h2>
+  </section>
+
+  <section class="middle-panel">
+    <div class="classic-modern-text">
+      <h1 class="main-title">LA <br> FAMILIA</h1>
+      <p class="sub-title">—THE HEART OF MY HOME—</p>
+      <div class="accent-line"></div>
+    </div>
+  </section>
+
+  <section class="side-panel left-panel">
+    <div class="image-placeholder">
+        <img src="gal10.jpeg" alt="Family Photo Left">
+    </div>
+    <h2 class="vertical-text">MAMA'S SIDE 🤎</h2>
+  </section>
+</main>
+
+<section class="family-details">
+    <div class="details-container">
+        <div class="details-text-box">
+            <h2 class="serif-title">About My Family</h2>
+            <p class="description-text">
+                Family is not an important thing. It's everything. This space is dedicated 
+                to the people who have shaped me into who I am today. Each memory captured 
+                here is a testament to the love and support that surrounds me.
+            </p>
+        </div>
+
+        <div class="details-visual">
+            <img src="fam 2.jpeg" alt="Family Moment" class="main-family-img">
+            <div class="image-placeholder">
+                 <img src="lala.jpeg" alt="Classic Illustration" class="sketch-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="social-links">
+        <a href="https://youtube.com/@addinaazizi" class="social-link" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/mochiandmint_" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@dailypagesofdhikir" class="social-link" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+
+    <div class="footer-utility">
+        <p>&copy; 2025 🎧. All Rights Reserved. 
+        | <a href="sitemap.html" class="footer-sitemap-link">Sitemap</a></p>
+    </div>
+    
+    <div class="info-dates">
+        <span><strong>Data Collected:</strong> 2025-12-14</span>
+        <span><strong>Created:</strong> 2025-12-24</span>
+        <span><strong>Last Updated:</strong> <span id="last-modified">2025-12-30</span></span>
+    </div>
+
+    <script src="date.js"></script>
+</footer>
+
+<script>
+  window.addEventListener('load', function() {
+    const loader = document.getElementById('loading');
+    if(loader) {
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 1000);
+    }
+  });
+</script>
+
+</body>
+</html>
