@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interest - Yuna</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --dark-blue: #0b0e14;
+      --soft-pink: #f8bbd0;
+      --hot-pink: #ff69b4;
+    }
+
+    /* --- LOADING SCREEN  --- */
+    #loading {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #000000; 
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      transition: opacity 0.5s ease;
+    }
+
+    .sleep span {
+      font-size: 2.5rem;
+      display: inline-block;
+      animation: bounce 0.6s infinite alternate;
+    }
+    .sleep span:nth-child(2) { animation-delay: 0.2s; }
+    .sleep span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-15px); }
+    }
+
+    /* --- BASE STYLE original) --- */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--dark-blue);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; 
+    }
+
+    /* --- NAVIGATION original --- */
+    nav { 
+      background: white !important; 
+      padding: 15px 5%; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      height: 80px;
+      box-sizing: border-box;
+    }
+
+    .logo { font-size: 2rem; display: flex; align-items: center; }
+    .nav-links { display: flex; align-items: center; }
+    .nav-links a { 
+      color: #876AD4; 
+      text-decoration: none; 
+      margin-left: 35px; 
+      font-weight: 600; 
+      font-size: 1.1rem;
+      transition: 0.3s;
+    }
+    .nav-links a:hover { color: var(--hot-pink); }
+
+    /* --- SLIDESHOW original --- */
+    .hero-slider {
+      width: 100%;
+      height: 60vh; 
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+    .slider-wrapper { display: flex; width: 500%; height: 100%; transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); }
+    .slide { width: 20%; height: 100%; position: relative; }
+    .slide img { width: 100%; height: 100%; object-fit: cover; }
+    .slide-content { position: absolute; bottom: 60px; left: 5%; z-index: 21; color: white; }
+    .slide-content h1 { font-size: 2.8rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
+    .slide::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, var(--dark-blue), transparent); z-index: 20; }
+
+    .slider-indicators { position: absolute; bottom: 30px; left: 5%; display: flex; gap: 12px; z-index: 25; }
+    .dot { width: 35px; height: 3px; background: rgba(255, 255, 255, 0.3); border-radius: 2px; }
+    .dot.active { background: var(--hot-pink); width: 55px; }
+
+    /* --- CONTENT GRID --- */
+    .trending-container {
+      background-color: var(--soft-pink); 
+      padding: 60px 5%;
+      text-align: center;
+    }
+    .trending-title { color: var(--hot-pink); font-size: 2.2rem; margin-bottom: 40px; font-weight: 600; }
+    .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+
+    .card {
+      position: relative;
+      background: #161b22;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+    .card:hover { transform: scale(1.1) translateY(-10px); z-index: 10; }
+    .card img { width: 100%; aspect-ratio: 2/3; object-fit: cover; }
+    .card-info { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 14, 20, 0.8); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; padding: 15px; }
+    .card:hover .card-info { opacity: 1; }
+    .card-info h3 { color: white; font-size: 1.1rem; text-align: center; margin: 0; }
+
+    /* --- FOOTER ASAL KAU --- */
+    .main-footer { 
+      background-color: var(--dark-blue); 
+      color: white; 
+      padding: 50px 20px; 
+      text-align: center;
+      margin-top: auto; 
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .social-link { color: #8c8cff; font-size: 28px; margin: 0 20px; text-decoration: none; transition: 0.3s; }
+    .social-link:hover { color: var(--hot-pink); }
+    .info-dates { margin-top: 20px; font-size: 0.8rem; opacity: 0.7; }
+    .info-dates span { margin: 0 10px; }
+  </style>
+</head>
+<body>
+
+<div id="loading">
+    <div class="sleep">
+        <span>💤</span>
+        <span>💤</span>
+        <span>💤</span>
+    </div>
+    <p><strong>Wait yaa... 🗣️</strong></p>
+</div>
+
+<nav>
+  <div class="logo">🎧</div>
+  <div class="nav-links">
+    <a href="index.html">About</a>
+    <a href="biodata.html">Biodata</a>
+    <a href="family.html">Family</a>
+    <a href="education.html">Education</a>
+    <a href="interest.html">Interest</a>
+    <a href="gallery.html">Gallery</a>
+  </div>
+</nav>
+
+<main style="flex: 1;"> 
+  <div class="hero-slider">
+    <div class="slider-wrapper" id="sliderWrapper">
+      <div class="slide"><img src="a.jpeg"><div class="slide-content"><h1>In this page</h1></div></div>
+      <div class="slide"><img src="b.jpeg"><div class="slide-content"><h1>I'll share</h1></div></div>
+      <div class="slide"><img src="c.jpeg"><div class="slide-content"><h1>With you</h1></div></div>
+      <div class="slide"><img src="d.jpeg"><div class="slide-content"><h1>About</h1></div></div>
+      <div class="slide"><img src="e.jpeg"><div class="slide-content"><h1>My Interest</h1></div></div>
+    </div>
+    <div class="slider-indicators" id="indicators">
+      <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+
+  <div class="trending-container">
+    <h2 class="trending-title">recommended series💯</h2>
+    <div class="grid-container">
+      <div class="card"><img src="harry potter 1.jpg"><div class="card-info"><h3>The Sorcerer's Stone</h3></div></div>
+      <div class="card"><img src="harry potter 2.jpg"><div class="card-info"><h3>Chamber of Secrets</h3></div></div>
+      <div class="card"><img src="harry potter 3.jpg"><div class="card-info"><h3>Prisoner of Azkaban</h3></div></div>
+      <div class="card"><img src="harry potter 4.jpg"><div class="card-info"><h3>Goblet of Fire</h3></div></div>
+      <div class="card"><img src="harry potter 6.jpg"><div class="card-info"><h3>The Deathly Hallows</h3></div></div>
+    </div>
+  </div>
+
+  <div class="trending-container">
+    <h2 class="trending-title">favourite animation💤</h2>
+    <div class="grid-container">
+      <div class="card"><img src="yu 1.jpg"><div class="card-info"><h3>Ratatouille</h3></div></div>
+      <div class="card"><img src="yu 2.jpg"><div class="card-info"><h3>The Mitchells vs The Machine</h3></div></div>
+      <div class="card"><img src="yu 3.jpg"><div class="card-info"><h3>Orion and the Dark</h3></div></div>
+      <div class="card"><img src="yu 4.jpg"><div class="card-info"><h3>Pingu</h3></div></div>
+      <div class="card"><img src="yu 5.jpg"><div class="card-info"><h3>Wonderpets</h3></div></div>
+    </div>
+  </div>
+
+  <div class="trending-container">
+    <h2 class="trending-title">Best 2000's movie📽️</h2>
+    <div class="grid-container">
+      <div class="card"><img src="sa.jpg"><div class="card-info"><h3>Avatar 2009</h3></div></div>
+      <div class="card"><img src="si.jpg"><div class="card-info"><h3>Back to the Future</h3></div></div>
+      <div class="card"><img src="se.jpg"><div class="card-info"><h3>White Chicks</h3></div></div>
+      <div class="card"><img src="so.jpg"><div class="card-info"><h3>Princess Diaries</h3></div></div>
+      <div class="card"><img src="su.png"><div class="card-info"><h3>Legally blonde</h3></div></div>
+    </div>
+  </div> 
+
+  <div class="trending-container">
+    <h2 class="trending-title">Variety show🏃‍♀️‍➡️</h2>
+    <div class="grid-container">
+      <div class="card"><img src="ta.jpg"><div class="card-info"><h3>Going Seventeen</h3></div></div>
+      <div class="card"><img src="ti.jpg"><div class="card-info"><h3>The Return of Superman</h3></div></div>
+      <div class="card"><img src="te.jpg"><div class="card-info"><h3>University War</h3></div></div>
+      <div class="card"><img src="to.jpg"><div class="card-info"><h3>Running Man</h3></div></div>
+      <div class="card"><img src="tu.jpg"><div class="card-info"><h3>Knowing Bros</h3></div></div>
+    </div>
+  </div> 
+</main>
+
+<footer class="main-footer">
+  <div class="social-links">
+    <a href="https://youtube.com/@addinaazizi" class="social-link"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/mochiandmint_" class="social-link"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@dailypagesofdhikir" class="social-link"><i class="fab fa-tiktok"></i></a>
+  </div>
+  <p style="margin-top: 20px;">&copy; 2025 🎧. All Rights Reserved. | <a href="sitemap.html" style="color: #8c8cff; text-decoration: none;">Sitemap</a></p>
+  
+  <div class="info-dates">
+    <span><strong>Data Collected:</strong> 2025-12-14</span>
+    <span><strong>Created:</strong> 2025-12-24</span>
+    <span><strong>Last Updated:</strong> <span id="last-modified">2025-12-30</span></span>
+  </div>
+</footer>
+
+<script>
+  // 1. Script for hilangkan loading page yang lama
+  window.addEventListener('load', function() {
+    const loader = document.getElementById('loading');
+    setTimeout(() => {
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 500);
+    }, 1500);
+  });
+
+  // 2. Slider Logic the original
+  const wrapper = document.getElementById('sliderWrapper');
+  const dots = document.querySelectorAll('.dot');
+  let index = 0;
+  function nextSlide() {
+    index++;
+    if (index >= 5) index = 0;
+    wrapper.style.transform = `translateX(-${index * 20}%)`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+  }
+  setInterval(nextSlide, 8000);
+</script>
+<script src="date.js"></script>
+
+</body>
+</html>
