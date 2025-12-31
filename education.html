@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Education - Yuna</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loading">
+    <div class="sleep">
+        <span>💤</span>
+        <span>💤</span>
+        <span>💤</span>
+    </div>
+    <p><strong>Wait yaa... 🗣️</strong></p>
+</div>
+
+<nav>
+  <span class="music-emoji">🎧</span>
+  <div class="nav-links">
+    <a href="index.html">About</a>
+    <a href="biodata.html">Biodata</a>
+    <a href="family.html">Family</a>
+    <a href="education.html">Education</a>
+    <a href="interest.html">Interest</a>
+    <a href="gallery.html">Gallery</a>
+  </div>
+</nav>
+
+<div class="main-content-area">
+  <h1 class="main-title">MY EDUCATION PORTFOLIO</h1>
+  <hr>
+
+  <div class="row">
+    <div class="column">
+      <div class="content">
+        <img src="pasti.jpg" alt="School 1" style="width:100%">
+        <h3>Kindergarden ( Pasti Al-Ain)</h3>
+        <p>This is where I got to have my own friend beside my family. First place
+        that teach me to wake up early in the morning</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="content">
+        <img src="sekol 1.jpeg" alt="School 2" style="width:100%">
+        <h3>Primary Education (SKSMS)</h3>
+        <p>Managed to become an academic achiever here and active in all-kind of
+        co-curriculum without miss one event</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="content">
+        <img src="smkab.jpg" alt="Nature" style="width:100%">
+        <h3>High school (SMKAB)</h3>
+        <p>Focused on flying colours on examination but not an academic achievers again
+        but always my face was the target for emcee for any event at school</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="content">
+        <img src="uitm.jpg" alt="Mountains" style="width:100%">
+        <h3>University (UITM KEDAH)</h3>
+        <p>Only thinking about how every semester I survived. Just married with the AI already</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="education-journey">
+    <div class="journey-container">
+        <div class="journey-header">
+            <h2 class="serif-title">My Academic Story</h2>
+            <div class="accent-line"></div>
+        </div>
+        
+        <div class="journey-content">
+            <p>
+                My education journey began with a curiosity to become a doctor during
+                elementary school but it won't stay long as I grew fall in love with 
+                subject mathematics. So, during high school I decide to take account
+                class instead of science stream. Everythings when well but my passion
+                grew stronger in law field out of blue.
+        
+                <span id="dots">...</span>
+
+                <span id="moreText" style="display: none;">
+                    However I didn'the chance to pursue law because I don't get the 
+                    permission and now, i'm fully a student who loved to explore
+                    about web development to create a website for you to see
+                </span>
+            </p>
+            
+            <button onclick="toggleReadMore()" id="readMoreBtn">Read More</button>
+        </div>
+    </div>
+  </section>
+
+  <script>
+  function toggleReadMore() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("moreText");
+      var btnText = document.getElementById("readMoreBtn");
+
+      if (dots.style.display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read More";
+          moreText.style.display = "none";
+      } else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read Less";
+          moreText.style.display = "inline";
+      }
+  }
+  </script>
+</div>
+
+<footer>
+    <div class="social-links">
+        <a href="https://youtube.com/@airealz2501" class="social-link" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/mochiandmint_" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@basirah288" class="social-link" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+
+    <div class="footer-utility">
+        <p>&copy; 2025 🎧. All Rights Reserved. 
+        | <a href="sitemap.html" class="footer-sitemap-link">Sitemap</a></p>
+    </div>
+    
+    <div class="info-dates">
+        <span><strong>Data Collected:</strong> 2025-12-14</span>
+        <span><strong>Created:</strong> 2025-12-24</span>
+        <span><strong>Last Updated:</strong> <span id="last-modified">2025-12-30</span></span>
+    </div>
+
+    <script src="date.js"></script>
+
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(() => {
+          document.getElementById('loading').style.display = 'none';
+        }, 1000);
+      });
+    </script>
+</footer>
+
+</body>
+</html>
